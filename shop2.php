@@ -6,10 +6,10 @@
     // render the whole page using PHPTAL
 
     // finally, create a new template object
-    $template = new PHPTAL('shopping.xhtml');
+    $template = new PHPTAL('shop2.xhtml');
 
     // now add the variables for processing and that you created from above:
-    $template->page_title = "Shopping Cart";
+    $template->page_title = "Shop";
 
 
     // execute the template
