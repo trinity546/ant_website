@@ -24,7 +24,7 @@ function passwrdConfirm() {
 function input_fn() {
 	var fn_length = document.getElementById("firstname").value;
 	var textLength = fn_length.length;
-	var txt2 = "Your first name has to be between 1 and 50 characters";
+	var txt2 = "Opps. Your first name has to be between 1 and 50 characters";
     signerror.style.color = "#a94442";
     signerror.style.backgroundColor = "#f2dede";
     signerror.style.borderColor= "#f2dede";
@@ -55,7 +55,7 @@ function input_ln() {
 function input_email() {
 	var email_length = document.getElementById("email").value;
 	var textLength = email_length.length;
-	var txt4 = "Your email has to be between 5 and 50 characters";
+	var txt4 = "Please enter a valid email address";
 	document.getElementById("signerror").innerHTML = txt4;
 	if (textLength < 5 || textLength > 50) {
 		return false;
