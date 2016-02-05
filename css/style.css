@@ -296,7 +296,6 @@ label {
   }
 }
 
-#signerror {
-	color:#C51518;
-		
+.errormsgred{
+    color:#C51518;
 }

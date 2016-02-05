@@ -25,6 +25,13 @@ function input_fn() {
 	var fn_length = document.getElementById("firstname").value;
 	var textLength = fn_length.length;
 	var txt2 = "Your first name has to be between 1 and 50 characters";
+    signerror.style.color = "#a94442";
+    signerror.style.backgroundColor = "#f2dede";
+    signerror.style.borderColor= "#f2dede";
+    signerror.style.padding= "15px";
+    signerror.style.marginBottom= "20px";
+    signerror.style.border= "1px solid";
+    signerror.style.borderRadius= "4px";
 	if (textLength < 1 || textLength > 50) {
 	  document.getElementById("signerror").innerHTML = txt2;
 		return false;
