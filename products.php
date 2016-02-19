@@ -30,7 +30,7 @@ loadScripts();
                         <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/></td>
                         <td data-sku-price='$sku'>$price</td>
                         <td><input data-sku-add='$sku' type='button' class='startCart' value='Add'/></td>
-                        <img src='$img'>
+                        <td><img src='$img'> </td>
                       </tr>";
         }
         echo $html;
