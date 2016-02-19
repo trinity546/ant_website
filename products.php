@@ -10,13 +10,16 @@ loadScripts();
         $rows = $pm->listProducts();
 
         $html = "";
+        //var_dump($rows);
         foreach($rows as $row) {
             $sku = $row['SKU'];
             $price = $row['item_price'];
             $desc = $row['description'];
             $img = $row['path'];
+            $name = $row['name'];
             $html .= "<tr>
                         <td data-sku-desc='$sku'>$desc</td>
+                        <td data-sku-desc='$sku'>$name</td>
                         <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/></td>
                         <td data-sku-price='$sku'>$price</td>
                         <td><input data-sku-add='$sku' type='button' class='startCart' value='Add'/></td>
