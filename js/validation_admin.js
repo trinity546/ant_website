@@ -43,7 +43,7 @@ function input_fn() {
 function input_ln() {
 	var ln_length = document.getElementById("lastname").value;
 	var textLength = ln_length.length;
-	var txt3 = "Your last name has to be between 1 and 50 characters";
+	var txt3 = "Opps. Your last name has to be between 1 and 50 characters";
 	if (textLength < 1 || textLength > 50 ) {
 	   document.getElementById("signerror").innerHTML = txt3;
 		return false;
