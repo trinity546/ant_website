@@ -15,24 +15,27 @@ loadScripts();
             $sku = $row['SKU'];
             $price = $row['item_price'];
             $desc = $row['description'];
-<<<<<<< Updated upstream
             $img = $row['path'];
             $name = $row['name'];
-            $html .= "<tr>
-                        <td data-sku-desc='$sku'>$desc</td>
-                        <td data-sku-desc='$sku'>$name</td>
-=======
-            $name = $row['name'];
-            $html .= "<tr>
-                        <td data-sku-desc='$sku'>$desc</td>
-                        <td data-sku-name='$sku'>$name</td>
->>>>>>> Stashed changes
-                        <td><input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/></td>
-                        <td data-sku-price='$sku'>$price</td>
-                        <td><input data-sku-add='$sku' type='button' class='startCart' value='Add'/></td>
-                        <img src='$img'>
-                      </tr>";
+           
+ $html .= "
+               <div class='row'>
+                    <div class='col-md-7'>
+                        <img src='$img'  class='img-responsive img-hover'>
+                    </div>
+                    <div class='col-md-5'>
+                        <h3 data-sku-desc='$sku'>$name</h3>
+                        <p data-sku-desc='$sku'>$desc</p>
+                        <input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/>
+                        <h4 data-sku-price='$sku'>$price</h4>
+                        <a href='#myAnchor' onclick='smoothScroll(document.getElementById('myAnchor'))''><input data-sku-add='$sku'  type='button' class='startCart btn btn-primary' value='Add To Cart '/></a>
+                       
+                </div>  
+                </div>
+                <hr>
+                      ";
         }
+
         echo $html;
         return;
 
@@ -42,5 +45,7 @@ loadScripts();
     }
 
     echo json_encode($data, JSON_FORCE_OBJECT);
+
+
 
 ?>

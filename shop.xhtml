@@ -41,21 +41,50 @@
 
     <!-- /.intro-header -->
 
-        <div class="container">
+        <div class="container" name="myAnchor" id="myAnchor">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <h2 class="section-heading-main">Shop Sepia</h2>
+                    <h2  class="section-heading-main">Shop Sepia</h2>
                     <p class="lead text-faded">Below you will find select items from the 19th and early 20th century. Our collections specialize in clocks, mirrors, and of course furniture! Please read the description of each item to learn about there personality and also past. If you are looking for a specific item that is not on the Sepia site, please contact us as we might just have it in stock. </p>
                 </div>
             </div>
 
-            <hr></hr>
             <br/>
             <br/>
         </div>
 
      <!-- Page Content -->
     <div class="container">
+        
+        
+        
+        
+        
+<div id="content">
+
+      <div id="shoppingCartContainer">
+          
+           <input type="button" value="Start Cart" id="startCart"/>
+        <input type="button" value="Cancel Cart" id="cancelCart"/>
+
+        <h2>Cart Summary</h2>
+        <ul id="shoppingCart">
+          <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
+            <input type="button" data-remove-button="remove" value="X"/></li>-->
+        </ul>
+        <input type="button" value="Check Out" id="checkoutcart"/>
+        <span style="display: inline; font-size: 8pt;"><i>You'll see taxes and other shipping costs (ha ha) during checkout.</i></span>
+
+          <br/><br/>
+      
+
+
+       
+
+        </div>
+</div>
+        <br/>
+        <br/>
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
@@ -74,25 +103,13 @@
             </div>
         </div>
              
-            </div>
-
-        <hr></hr>
-
+            
 
     <div id="content">
 
       <div id="shoppingCartContainer">
-
+          <br/><br/>
         <table id="productTable">
-
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Add</th>
-            </tr>
-          </thead>
           <tbody id="productslist">
             <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
 
@@ -102,42 +119,16 @@
         </table>
 
 
-        <input type="button" value="Start Cart" id="startCart"/>
-        <input type="button" value="Cancel Cart" id="cancelCart"/>
-
-        <h2>Cart Summary</h2>
-        <ul id="shoppingCart">
-          <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
-            <input type="button" data-remove-button="remove" value="X"/></li>-->
-        </ul>
-        <input type="button" value="Check Out" id="checkoutcart"/>
-        <span style="display: inline; font-size: 8pt;"><i>You'll see taxes and other shipping costs (ha ha) during checkout.</i></span>
+       
 
         </div>
 </div>
 
-<br/>
-<br/>
-<!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="shop.php">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="shop.php">1</a>
-                    </li>
-                    <li>
-                        <a href="shop2.php">2</a>
-                    </li>
-                    <li>
-                        <a href="shop2.php">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
+</div>
+
+
+
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   
@@ -146,6 +137,16 @@
     </footerReplace>
 
   </body>
+<script>
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+});
+
+</script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         /*<![CDATA[*/
@@ -207,7 +208,7 @@
 
                     var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "' data-item-date='"
                         + date + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
-                        + " <input type='button' data-remove-button='remove' value='X'/></li>";
+                        + " <input type='button' data-remove-button='remove' value='Delete' class='btn btn-primary'/></li>";
                     shoppingCartList.append(item);
 
 
@@ -222,8 +223,8 @@
                 // get the sku
                 var sku = this.getAttribute("data-sku-add");
                 var qty = $("input[data-sku-qty='" + sku + "']").val();
-                var price = $("td[data-sku-price='" + sku + "']").text();
-                var desc = $("td[data-sku-desc='" + sku + "']").text();
+                var price = $("h4[data-sku-price='" + sku + "']").text();
+                var desc = $("p[data-sku-desc='" + sku + "']").text();
                 var subtotal = parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
                 console.log(desc, "quantity", qty, "price", price);
 
@@ -234,7 +235,7 @@
                 var aDate = new Date();
                 var item = "<li data-item-sku='" + sku + "' data-item-qty='" + qty + "' data-item-date='"
                     + aDate.getTime() + "'>" + desc + " " + qty + " x $" + price + " = " + subtotal
-                    + " <input type='button' data-remove-button='remove' value='X'/></li>";
+                    + " <input type='button' data-remove-button='remove' value='Delete' class='btn btn-primary'/></li>";
                 shoppingCartList.append(item);
 
 
@@ -374,5 +375,10 @@
         });
         /**]]>*/
 </script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+
+
+
 
 </html>
