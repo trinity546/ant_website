@@ -17,6 +17,7 @@ loadScripts();
             $desc = $row['description'];
             $img = $row['path'];
             $name = $row['name'];
+<<<<<<< HEAD
             $html .= "
                <div class='row'>
                     <div class='col-md-7'>
@@ -33,6 +34,9 @@ loadScripts();
                 <hr>
                       ";
           
+=======
+            $html .= "";
+>>>>>>> origin/master
         }
 
         echo $html;
