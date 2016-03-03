@@ -17,8 +17,7 @@ loadScripts();
             $desc = $row['description'];
             $img = $row['path'];
             $name = $row['name'];
-           
- $html .= "
+            $html .= "
                <div class='row'>
                     <div class='col-md-7'>
                         <img src='$img'  class='img-responsive img-hover'>
@@ -28,12 +27,12 @@ loadScripts();
                         <p data-sku-desc='$sku'>$desc</p>
                         <input data-sku-qty='$sku' type='number' value='1' min='1' max='10' step='1'/>
                         <h4 data-sku-price='$sku'>$price</h4>
-                        <a href='#myAnchor' onclick='smoothScroll(document.getElementById('myAnchor'))''><input data-sku-add='$sku'  type='button' class='startCart btn btn-primary' value='Add To Cart '/></a>
-                       
+                        <a href='#myAnchor' onclick='smoothScroll(document.getElementById('myAnchor'))''><input data-sku-add='$sku'                                 type='button' class='startCart btn btn-primary' value='Add To Cart '/></a>      
                 </div>  
                 </div>
                 <hr>
                       ";
+          
         }
 
         echo $html;
